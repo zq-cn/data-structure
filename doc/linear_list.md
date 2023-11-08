@@ -97,8 +97,8 @@ function DestryList(){
 ```c
 #define MaxSize 50 //定义线性表的最大长度
 typedef struct{
-ElemType data [MaxSize] ; //顺序表的元素
-int length; //顺序表的当前长度
+    ElemType data [MaxSize] ; //顺序表的元素
+    int length; //顺序表的当前长度
 } SqList; //顺序表的类型定义
 ```
 一维数组可以是静态分配的，也可以是动态分配的。在静态分配时，由于数组的大小和空间事先已经固定，一旦空间占满，再加入新的数据就会产生溢出，进而导致程序崩溃。 
@@ -107,8 +107,8 @@ int length; //顺序表的当前长度
 ```c
 #define InitSize 100 //表长度的初始定义
 typedef struct{
-	ElemType *data;
-	int MaxSize,length;
+    ElemType *data;
+    int MaxSize,length;
 } SeqList;
 ```
 
