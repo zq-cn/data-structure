@@ -46,6 +46,23 @@ Listinsert (&L,i,e):插入操作。在表L中的第i个位置上插入指定元�
 ```c
 //code
 function Listinsert(){
+   //判断i的范围是否有效
+    if(i<1 || i > L.length+1){
+        return false;
+    }
+    //当前存储空间已满，不能插入
+    if(L.length>=MaxSize){
+        return false;
+    }
+    //将第i个元素及之后的元素后移
+    for(int j=L.length;j>=i;j--){
+        L.data[j]=L data[j-1];
+    }
+    //在位置i处放入e
+    L data[i-l]=e;
+    //线性表长度加1
+    L length++;
+    return true;
 }
 ```
 ListDelete (&L, i, &e):删除操作。删除表L中第i个位置的元素，并用e返回删除元素的值。
@@ -127,3 +144,34 @@ L data=new ElemType[TnitSize];
 顺序表最主要的特点是随机访问，即通过首地址和元素序号可在时间$O(1)$内找到指定的元素。  
 顺序表的存储密度高，每个结点只存储数据元素。   
 顺序表逻辑上相邻的元素物理上也相邻，所以插入和删除操作需要移动大量元素。  
+
+
+### 顺序表上基本操作的实现
+这里仅讨论顺序表的插入、删除和按值查找的算法，其他基本操作的算法都比较简单
+- 插入操作
+在顺序表L的第i (l<=i<=L. length+1)个位置插入新元素e。若i的输入不合法，则返回false,表示插入失败；否则，将第i个元素及其后的所有元素依次往后移动一个位置，腾岀一个空位置插入新元素e,顺序表长度增加1,插入成功，返回true。
+```c
+bool Listinsert(SqList &L,int i,ElemType e){
+    //判断i的范围是否有效
+    if(i<1 || i > L.length+1){
+        return false;
+    }
+    //当前存储空间已满，不能插入
+    if(L.length>=MaxSize){
+        return false;
+    }
+    //将第i个元素及之后的元素后移
+    for(int j=L.length;j>=i;j--){
+        L.data[j]=L data[j-1];
+    }
+    //在位置i处放入e
+    L data[i-l]=e;
+    //线性表长度加1
+    L length++;
+    return true;
+}
+```
+> 注意：区别顺序表的位序和数组下标。为何判断插入位置是否合法时if语句中用length+1,而移动元素的for语句中只用length?
+
+
+ 
