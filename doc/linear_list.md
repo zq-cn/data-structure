@@ -176,8 +176,8 @@ bool Listinsert(SqList &L,int i,ElemType e){
 最好情况：在表尾插入(即i = n+l),元素后移语句将不执行，时间复杂度为 $O(1)$ 。   
 最坏情况：在表头插入(即i = 1),元素后移语句将执行巾次，时间复杂度为 $O(n)$ 。   
 平均情况：假设 $P_i(P_i =1/(n+1))$ 是在第i个位置上插入一个结点的概率，则在长度为”的线性表中插入一个结点时，所需移动结点的平均次数为     
-$$\sum_{k=1}^{n+1} P_1(n-i+1)  =  \sum_{k=1}^{n+1}\frac{1}{n+1}(n-i+1)  = \frac{1}{n+1}\left( \sum_{k=1}^{n+1}  \right) (n-i+1) = \frac{1}{n+1}  \frac{n(n-1)}{2} = \frac{n}{2}$$
+$$\sum_{k=1}^{n+1} P_1(n-i+1)  =  \sum_{k=1}^{n+1}\frac{1}{n+1}(n-i+1)  = \frac{1}{n+1}\sum_{k=1}^{n+1}  (n-i+1) = \frac{1}{n+1}  \frac{n(n-1)}{2} = \frac{n}{2}$$
 
-$$\left( \sum_{k=1}^n P_1(n-i) \right) = \left( \sum_{k=1}^n\frac{1}{n}(n-i) \right)= \frac{1}{n}\left( \sum_{k=1}^n  \right) (n-i) = \frac{1}{n}  \frac{n(n-1)}{2} = \frac{n-1}{2}$$  
+$$\sum_{k=1}^n P_1(n-i) =  \sum_{k=1}^n\frac{1}{n}(n-i) = \frac{1}{n}\sum_{k=1}^n  (n-i) = \frac{1}{n}  \frac{n(n-1)}{2} = \frac{n-1}{2}$$  
  
  
