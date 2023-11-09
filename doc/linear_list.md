@@ -16,7 +16,24 @@
 > 注意：①基本操作的实现取决于采用哪种存储结构，存储结构不同，算法的实现也不同。 ②“&”表示C++语言中的引用调用，在C语言中采用指针也可达到同样的效果。
 > 
 数据结构定义
+- 定义静态分配内存的线性表
+
 ```c
+#define MaxSize 50 //定义线性表的最大长度
+typedef struct {
+    ElemType data[MaxSize]; //顺序表的元素
+    int length; //顺序表的当前长度
+} SqList; //顺序表的类型定义
+
+```
+- 定义动态分配内存的线性表
+
+```c
+#define InitSize 100 //表长度的初始定义
+typedef struct{
+    ElemType *data;
+    int MaxSize,length;
+} SeqList;
 ```
 InitList(&L):初始化表。构造一个空的线性表。
 ```c
