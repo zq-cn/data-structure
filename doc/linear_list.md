@@ -44,24 +44,25 @@ function InitList(){
 ```
 Listinsert (&L,i,e):插入操作。在表L中的第i个位置上插入指定元素e。
 ```c
-//code
-function Listinsert(){
-   //判断i的范围是否有效
-    if(i<1 || i > L.length+1){
+bool Listinsert(SqList &L, int i, ElemType e) {
+    //判断i的范围是否有效
+    if (i < 1 || i > L.length) {
         return false;
     }
-    //当前存储空间已满，不能插入
-    if(L.length>=MaxSize){
+   //当前存储空间已满，不能插入
+    if (L.length >= MaxSize){
         return false;
     }
-    //将第i个元素及之后的元素后移
-    for(int j=L.length;j>=i;j--){
-        L.data[j]=L data[j-1];
+   //将第i个元素及之后的元素后移
+    for (int j = L.length; j >= i; j--) {
+        L.data[j] = L;
+        data[j - 1];
     }
     //在位置i处放入e
-    L data[i-l]=e;
+    L.data[i - 1] = e;
     //线性表长度加1
-    L length++;
+    L.length++;
+
     return true;
 }
 ```
