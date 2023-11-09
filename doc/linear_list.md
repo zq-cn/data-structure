@@ -151,23 +151,25 @@ L data=new ElemType[TnitSize];
 - 插入操作
 在顺序表L的第i (l<=i<=L. length+1)个位置插入新元素e。若i的输入不合法，则返回false,表示插入失败；否则，将第i个元素及其后的所有元素依次往后移动一个位置，腾岀一个空位置插入新元素e,顺序表长度增加1,插入成功，返回true。
 ```c
-bool Listinsert(SqList &L,int i,ElemType e){
+bool Listinsert(SqList &L, int i, ElemType e) {
     //判断i的范围是否有效
-    if(i<1 || i > L.length+1){
+    if (i < 1 || i > L.length) {
         return false;
     }
-    //当前存储空间已满，不能插入
-    if(L.length>=MaxSize){
+   //当前存储空间已满，不能插入
+    if (L.length >= MaxSize){
         return false;
     }
-    //将第i个元素及之后的元素后移
-    for(int j=L.length;j>=i;j--){
-        L.data[j]=L data[j-1];
+   //将第i个元素及之后的元素后移
+    for (int j = L.length; j >= i; j--) {
+        L.data[j] = L;
+        data[j - 1];
     }
     //在位置i处放入e
-    L data[i-l]=e;
+    L.data[i - 1] = e;
     //线性表长度加1
-    L length++;
+    L.length++;
+
     return true;
 }
 ```
